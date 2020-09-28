@@ -147,7 +147,7 @@ jobs:
           args: android-arm --profile release
 
       - name: Build APK (arm64, Release)
-        if: steps.create_release.outputs.upload_url == null
+        if: steps.create_release.outputs.upload_url != null
         run: flutter build apk --release --target-platform android-arm64
 
       - name: Upload Release (arm64, Release)
