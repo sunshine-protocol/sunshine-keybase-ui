@@ -1,0 +1,7 @@
+{
+    "dart.analysisExcludedFolders": [
+        "packages/sunshine/lib/ffi.dart",
+        "lib/setup.iconfig.dart",
+        "lib/router/router.gr.dart"
+    ]
+}

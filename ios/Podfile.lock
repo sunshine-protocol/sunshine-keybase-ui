@@ -1,0 +1,52 @@
+PODS:
+  - Flutter (1.0.0)
+  - frusty_logger (0.0.1):
+    - Flutter
+  - path_provider (0.0.1):
+    - Flutter
+  - sensors (0.0.1):
+    - Flutter
+  - shared_preferences (0.0.1):
+    - Flutter
+  - sunshine_ffi (0.0.1):
+    - Flutter
+  - url_launcher (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - frusty_logger (from `.symlinks/plugins/frusty_logger/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - sensors (from `.symlinks/plugins/sensors/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - sunshine_ffi (from `.symlinks/plugins/sunshine_ffi/ios`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  frusty_logger:
+    :path: ".symlinks/plugins/frusty_logger/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  sensors:
+    :path: ".symlinks/plugins/sensors/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
+  sunshine_ffi:
+    :path: ".symlinks/plugins/sunshine_ffi/ios"
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  frusty_logger: cc5ccbb4d9f92b44cd0bbc7f5d17846b3edd3f52
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  sensors: 84eb7a30e47a649e4172b71d6e81be614c280336
+  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
+  sunshine_ffi: 5c5a8847b6fcb7dbeef8873250c9b4703c8c5a6c
+  url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.8.4

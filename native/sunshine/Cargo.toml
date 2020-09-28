@@ -1,0 +1,31 @@
+[package]
+name = "sunshine"
+version = "0.1.0"
+authors = ["Shady Khalifa <shekohex@gmail>"]
+edition = "2018"
+
+[lib]
+# this value will change depending on the target os
+# for iOS it would be `staticlib`
+# for android it would be `c-dylib`
+crate-type = ["rlib"]
+
+[dependencies]
+log = "^0.4"
+
+[dependencies.client]
+git = "https://github.com/sunshine-protocol/sunshine"
+package = "sunshine-client"
+
+[dependencies.keybase-ffi]
+git = "https://github.com/sunshine-protocol/sunshine-identity"
+package = "sunshine-identity-ffi"
+default-features = false
+features = ["identity-wallet", "identity-key", "identity-device", "identity-id"]
+
+[dependencies.faucet-ffi]
+git = "https://github.com/sunshine-protocol/sunshine-identity"
+package = "sunshine-faucet-ffi"
+
+[dependencies.frusty-logger]
+git = "https://github.com/sunshine-protocol/frusty-logger"
