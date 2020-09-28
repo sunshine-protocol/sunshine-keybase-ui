@@ -132,6 +132,11 @@ class DevClientService implements ClientService {
   Future<String> uidOf(String id) {
     throw UnimplementedError();
   }
+
+  @override
+  Future<bool> updatedPassword(String password) async {
+    return true;
+  }
 }
 
 const _instractionsForDemo = '''

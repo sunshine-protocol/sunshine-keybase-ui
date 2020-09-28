@@ -19,6 +19,7 @@ abstract class ClientService {
   Future<String> uidOf(String id);
   Future<ProveIdentityResult> proveIdentity(SocialIdentityService service);
   Future<bool> revokeIdentity(SocialIdentityService service);
+  Future<bool> updatedPassword(String password);
 }
 
 class ProveIdentityResult {

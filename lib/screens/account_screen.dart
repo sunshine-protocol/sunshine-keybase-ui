@@ -158,6 +158,23 @@ class _AccountScreenState extends State<AccountScreen> {
               endIndent: 15,
               color: AppColors.disabled,
             ),
+            ListCell(
+              title: 'Update Password',
+              trailing: const Icon(
+                Icons.chevron_right,
+                size: 32,
+                color: Colors.white,
+              ),
+              onTap: () {
+                ExtendedNavigator.root.push(Routes.updatePasswordScreen);
+              },
+            ),
+            const Divider(
+              thickness: 2,
+              indent: 15,
+              endIndent: 15,
+              color: AppColors.disabled,
+            ),
             SizedBox(height: 20.w.toDouble()),
             const HeaderText('Legal'),
             SizedBox(height: 10.w.toDouble()),

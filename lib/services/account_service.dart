@@ -46,4 +46,9 @@ class AccountService {
   Future<String> uid() {
     return _clientService.uid();
   }
+
+  Future<bool> updatedPassword(String password) async {
+    final changed = await _clientService.updatedPassword(password);
+    return changed;
+  }
 }

@@ -138,7 +138,7 @@ jobs:
           arch: x86_64
           script: flutter drive --target=test_driver/app.dart
 
-      - name: Run cargo make android (Release)
+      - name: Run cargo make android (arm64, Release)
         if: steps.create_release.outputs.upload_url != null
         uses: actions-rs/cargo@v1
         continue-on-error: false
@@ -150,7 +150,7 @@ jobs:
         if: steps.create_release.outputs.upload_url == null
         run: flutter build apk --release --target-platform android-arm64
 
-      - name: Upload Release (Android)
+      - name: Upload Release (arm64, Release)
         id: upload-release-asset
         if: steps.create_release.outputs.upload_url != null
         uses: actions/upload-release-asset@v1
@@ -160,4 +160,28 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/app/outputs/flutter-apk/app-release.apk
           asset_name: sunshine-keybase-release-arm64.apk
+          asset_content_type: application/octet-stream
+
+      - name: Run cargo make android (x86_64, Release)
+        if: steps.create_release.outputs.upload_url != null
+        uses: actions-rs/cargo@v1
+        continue-on-error: false
+        with:
+          command: make
+          args: android-dev --profile release
+
+      - name: Build APK (x86_64, Release)
+        if: steps.create_release.outputs.upload_url != null
+        run: flutter build apk --release --target-platform android-x64
+
+      - name: Upload Release (x86_64, Release)
+        id: upload-release-asset
+        if: steps.create_release.outputs.upload_url != null
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/app/outputs/flutter-apk/app-release.apk
+          asset_name: sunshine-keybase-release-x86_64.apk
           asset_content_type: application/octet-stream

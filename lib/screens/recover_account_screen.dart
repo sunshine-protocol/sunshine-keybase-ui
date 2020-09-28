@@ -50,14 +50,14 @@ class _RecoverAccountStepOneScreenState
             text: 'Next',
             variant: ButtonVariant.success,
             onPressed: () {
+              FocusScope.of(context).requestFocus(FocusNode());
               if (_paperKeyController.text.trim().isEmpty) {
                 setState(() {
                   _errText = '??!';
                 });
                 return;
               }
-              FocusScope.of(context).requestFocus(FocusNode());
-              ExtendedNavigator.root.popAndPush(
+              ExtendedNavigator.root.push(
                 Routes.recoverAccountStepTwoScreen,
                 arguments: RecoverAccountStepTwoScreenArguments(
                   paperKey: _paperKeyController.text,
@@ -173,10 +173,11 @@ class _RecoverAccountStepTwoScreenState
     // hide keyboard
     FocusScope.of(context).requestFocus(FocusNode());
     try {
-      await _keyService.restore(
+      final account = await _keyService.restore(
         _passwordController.text,
         widget.paperKey,
       );
+      debugPrint('Restored Account: ${account.uid ?? 'NOT CREATED'}');
       Future.delayed(
         const Duration(milliseconds: 100),
         () {
@@ -184,7 +185,6 @@ class _RecoverAccountStepTwoScreenState
         },
       );
     } catch (_) {
-      ExtendedNavigator.root.pop();
       const snackbar = SnackBar(
         content: Text(
           "Couldn't restore your account, check the paperkey again",
@@ -192,7 +192,9 @@ class _RecoverAccountStepTwoScreenState
         backgroundColor: AppColors.danger,
         duration: Duration(seconds: 5),
       );
-      Scaffold.of(context).showSnackBar(snackbar);
+      final snake = Scaffold.of(context).showSnackBar(snackbar);
+      await snake.closed;
+      ExtendedNavigator.root.pop();
     }
   }
 }

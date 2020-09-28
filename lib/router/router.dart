@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:sunshine/screens/update_password.dart';
 import 'package:sunshine/sunshine.dart';
 
 export 'router.gr.dart';
@@ -19,7 +20,7 @@ export 'router.gr.dart';
     AdaptiveRoute(page: RecoverAccountDoneScreen),
     AdaptiveRoute(
       page: MainScreen,
-      maintainState: true,
+      maintainState: false,
     ),
     AdaptiveRoute(page: WalletTransferScreen),
     AdaptiveRoute(page: WalletTransferConfirmationScreen),
@@ -38,6 +39,7 @@ export 'router.gr.dart';
     AdaptiveRoute(page: ProveIdentityDone),
     AdaptiveRoute(page: RevokeIdentityScreen),
     AdaptiveRoute(page: RevokeIdentityDoneScreen),
+    AdaptiveRoute(page: UpdatePasswordScreen),
     AdaptiveRoute(
       page: LoggerScreen,
       maintainState: true,

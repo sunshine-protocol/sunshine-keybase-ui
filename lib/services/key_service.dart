@@ -32,6 +32,9 @@ class KeyService {
 
   Future<Account> restore(String password, String paperKey) async {
     final uid = await _clientService.setKey(password, paperKey: paperKey);
+    if (uid == null) {
+      throw NullThrownError();
+    }
     return Account(
       uid: uid,
     );

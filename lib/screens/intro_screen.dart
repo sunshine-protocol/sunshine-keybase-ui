@@ -43,21 +43,20 @@ class _IntroScreenState extends State<IntroScreen> {
           SizedBox(height: 145.h.toDouble()),
           Button(
             variant: ButtonVariant.success,
-            text: 'Generate Account',
+            text: 'Generate account',
             onPressed: () {
               // step one: Device name, we skip that for now.
               ExtendedNavigator.root.push(Routes.generateAccountStepTwoScreen);
             },
           ),
-          // SizedBox(height: 20.h.toDouble()),
-          // Button(
-          //   variant: ButtonVariant.primary,
-          //   text: 'Restore my account',
-          //   onPressed: () {
-          // ignore: lines_longer_than_80_chars
-          //     ExtendedNavigator.root.push(Routes.recoverAccountStepTwoScreen);
-          //   },
-          // ),
+          SizedBox(height: 20.h.toDouble()),
+          Button(
+            variant: ButtonVariant.primary,
+            text: 'Restore my account',
+            onPressed: () {
+              ExtendedNavigator.root.push(Routes.recoverAccountStepOneScreen);
+            },
+          ),
         ],
       ),
     );

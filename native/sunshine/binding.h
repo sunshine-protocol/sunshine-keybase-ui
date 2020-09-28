@@ -5,6 +5,18 @@
 
 
 /**
+ * Changes Current Account Password.
+ * returns `true` if it got updated.
+ */
+int32_t client_account_change_password(int64_t port, const char *to);
+
+/**
+ * Creates Account for that device id.
+ * returns `true` if it got created.
+ */
+int32_t client_account_create(int64_t port, const char *device);
+
+/**
  * add a new device to your account
  * the `device` should be in the `ss58` format
  */

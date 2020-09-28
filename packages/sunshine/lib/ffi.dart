@@ -14,6 +14,40 @@ DynamicLibrary _open() {
   throw UnsupportedError('This platform is not supported.');
 }
 
+/// <p class="para-brief"> Changes Current Account Password. returns `true` if it got updated.</p>
+int client_account_change_password(
+  int port,
+  Pointer<ffi.Utf8> to,
+) {
+  return _client_account_change_password(port, to);
+}
+final _client_account_change_password_Dart _client_account_change_password = _dl.lookupFunction<_client_account_change_password_C, _client_account_change_password_Dart>('client_account_change_password');
+typedef _client_account_change_password_C = Int32 Function(
+  Int64 port,
+  Pointer<ffi.Utf8> to,
+);
+typedef _client_account_change_password_Dart = int Function(
+  int port,
+  Pointer<ffi.Utf8> to,
+);
+
+/// <p class="para-brief"> Creates Account for that device id. returns `true` if it got created.</p>
+int client_account_create(
+  int port,
+  Pointer<ffi.Utf8> device,
+) {
+  return _client_account_create(port, device);
+}
+final _client_account_create_Dart _client_account_create = _dl.lookupFunction<_client_account_create_C, _client_account_create_Dart>('client_account_create');
+typedef _client_account_create_C = Int32 Function(
+  Int64 port,
+  Pointer<ffi.Utf8> device,
+);
+typedef _client_account_create_Dart = int Function(
+  int port,
+  Pointer<ffi.Utf8> device,
+);
+
 /// <p class="para-brief"> add a new device to your account the `device` should be in the `ss58` format</p>
 int client_device_add(
   int port,

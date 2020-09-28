@@ -9,6 +9,7 @@
 import 'package:auto_route/auto_route.dart';
 
 import '../models/models.dart';
+import '../screens/update_password.dart';
 import '../sunshine.dart';
 
 class Routes {
@@ -43,6 +44,7 @@ class Routes {
   static const String proveIdentityDone = '/prove-identity-done';
   static const String revokeIdentityScreen = '/revoke-identity-screen';
   static const String revokeIdentityDoneScreen = '/revoke-identity-done-screen';
+  static const String updatePasswordScreen = '/update-password-screen';
   static const String loggerScreen = '/logger-screen';
   static const all = <String>{
     blankScreen,
@@ -69,6 +71,7 @@ class Routes {
     proveIdentityDone,
     revokeIdentityScreen,
     revokeIdentityDoneScreen,
+    updatePasswordScreen,
     loggerScreen,
   };
 }
@@ -107,6 +110,7 @@ class Router extends RouterBase {
     RouteDef(Routes.proveIdentityDone, page: ProveIdentityDone),
     RouteDef(Routes.revokeIdentityScreen, page: RevokeIdentityScreen),
     RouteDef(Routes.revokeIdentityDoneScreen, page: RevokeIdentityDoneScreen),
+    RouteDef(Routes.updatePasswordScreen, page: UpdatePasswordScreen),
     RouteDef(Routes.loggerScreen, page: LoggerScreen),
   ];
   @override
@@ -173,7 +177,7 @@ class Router extends RouterBase {
       return buildAdaptivePageRoute<dynamic>(
         builder: (context) => MainScreen(),
         settings: data,
-        maintainState: true,
+        maintainState: false,
       );
     },
     WalletTransferScreen: (data) {
@@ -280,6 +284,12 @@ class Router extends RouterBase {
           data.getArgs<RevokeIdentityDoneScreenArguments>(nullOk: false);
       return buildAdaptivePageRoute<dynamic>(
         builder: (context) => RevokeIdentityDoneScreen(args.service),
+        settings: data,
+      );
+    },
+    UpdatePasswordScreen: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => UpdatePasswordScreen(),
         settings: data,
       );
     },

@@ -6904,7 +6904,7 @@ dependencies = [
 [[package]]
 name = "sunshine-faucet-client"
 version = "0.2.0"
-source = "git+https://github.com/sunshine-protocol/sunshine-identity#5a030934d9c26d9fc6dda2da301ce0023a3059fa"
+source = "git+https://github.com/sunshine-protocol/sunshine-identity#42c23ebb3442919991ecd7b1e3eee7767ac2a2a3"
 dependencies = [
  "parity-scale-codec",
  "substrate-subxt",
@@ -6915,7 +6915,7 @@ dependencies = [
 [[package]]
 name = "sunshine-faucet-ffi"
 version = "0.1.0"
-source = "git+https://github.com/sunshine-protocol/sunshine-identity#5a030934d9c26d9fc6dda2da301ce0023a3059fa"
+source = "git+https://github.com/sunshine-protocol/sunshine-identity#42c23ebb3442919991ecd7b1e3eee7767ac2a2a3"
 dependencies = [
  "substrate-subxt",
  "sunshine-client-utils",
@@ -6927,7 +6927,7 @@ dependencies = [
 [[package]]
 name = "sunshine-faucet-pallet"
 version = "0.2.0"
-source = "git+https://github.com/sunshine-protocol/sunshine-identity#5a030934d9c26d9fc6dda2da301ce0023a3059fa"
+source = "git+https://github.com/sunshine-protocol/sunshine-identity#42c23ebb3442919991ecd7b1e3eee7767ac2a2a3"
 dependencies = [
  "frame-support",
  "frame-system",
@@ -6952,7 +6952,7 @@ dependencies = [
 [[package]]
 name = "sunshine-identity-client"
 version = "0.2.3"
-source = "git+https://github.com/sunshine-protocol/sunshine-identity#5a030934d9c26d9fc6dda2da301ce0023a3059fa"
+source = "git+https://github.com/sunshine-protocol/sunshine-identity#42c23ebb3442919991ecd7b1e3eee7767ac2a2a3"
 dependencies = [
  "async-std",
  "frame-support",
@@ -6970,7 +6970,7 @@ dependencies = [
 [[package]]
 name = "sunshine-identity-ffi"
 version = "0.2.3"
-source = "git+https://github.com/sunshine-protocol/sunshine-identity#5a030934d9c26d9fc6dda2da301ce0023a3059fa"
+source = "git+https://github.com/sunshine-protocol/sunshine-identity#42c23ebb3442919991ecd7b1e3eee7767ac2a2a3"
 dependencies = [
  "substrate-subxt",
  "sunshine-client-utils",
@@ -6982,7 +6982,7 @@ dependencies = [
 [[package]]
 name = "sunshine-identity-pallet"
 version = "0.2.0"
-source = "git+https://github.com/sunshine-protocol/sunshine-identity#5a030934d9c26d9fc6dda2da301ce0023a3059fa"
+source = "git+https://github.com/sunshine-protocol/sunshine-identity#42c23ebb3442919991ecd7b1e3eee7767ac2a2a3"
 dependencies = [
  "frame-support",
  "frame-system",

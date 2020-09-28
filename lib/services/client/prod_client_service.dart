@@ -82,6 +82,11 @@ class ProdClientService implements ClientService {
   }
 
   @override
+  Future<bool> updatedPassword(String password) async {
+    return true;
+  }
+
+  @override
   Future<String> balance() async {
     return _sunshineClientService
         .balance(null)
