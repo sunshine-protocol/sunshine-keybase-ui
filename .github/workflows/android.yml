@@ -151,7 +151,6 @@ jobs:
         run: flutter build apk --release --target-platform android-arm64
 
       - name: Upload Release (arm64, Release)
-        id: upload-release-asset
         if: steps.create_release.outputs.upload_url != null
         uses: actions/upload-release-asset@v1
         env:
@@ -175,7 +174,6 @@ jobs:
         run: flutter build apk --release --target-platform android-x64
 
       - name: Upload Release (x86_64, Release)
-        id: upload-release-asset
         if: steps.create_release.outputs.upload_url != null
         uses: actions/upload-release-asset@v1
         env:
