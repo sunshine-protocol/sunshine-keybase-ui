@@ -160,7 +160,6 @@ class _WalletTransferConfirmationScreenState
         },
       );
     } catch (_) {
-      ExtendedNavigator.root.pop();
       const snackbar = SnackBar(
         content: Text(
           "Couldn't complete the transaction, check the UID or username again.",
@@ -168,7 +167,9 @@ class _WalletTransferConfirmationScreenState
         backgroundColor: AppColors.danger,
         duration: Duration(seconds: 5),
       );
-      Scaffold.of(context).showSnackBar(snackbar);
+      final result = Scaffold.of(context).showSnackBar(snackbar);
+      await result.closed;
+      ExtendedNavigator.root.pop();
     }
   }
 }

@@ -13,8 +13,13 @@ class WalletService {
     return _clientService.balance();
   }
 
-  Future<String> transfer(String to, BigInt amount) {
-    return _clientService.transfer(to, amount);
+  Future<String> transfer(String to, BigInt amount) async {
+    final result = await _clientService.transfer(to, amount);
+    if (result == null) {
+      throw NullThrownError();
+    } else {
+      return result;
+    }
   }
 
   Future<BigInt> mint() async {
